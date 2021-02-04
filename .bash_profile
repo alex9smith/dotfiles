@@ -8,11 +8,14 @@ get_default_branch_name() {
 
 # Git shortcuts
 alias gs='git status'
-alias gcd='git checkout $get_default_branch_name'
 alias ga='git add'
 alias gc='git commit -m'
 alias gb='git checkout -b'
 alias gd='git diff --cached'
+
+gcd() {
+  git checkout `get_default_branch_name`
+}
 
 GPG_TTY=$(tty)
 export GPG_TTY
